@@ -19,4 +19,15 @@ body {
 .img-medium {
     height: 200px;
 }
-
+*{
+    background-color:LightCyan;
+}
+.container{
+    max-width: 800px;
+    margin: 0 auto;
+    color: rgb(146, 39, 75);
+    font-family: sans-serif;
+    padding-top: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
