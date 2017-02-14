@@ -18,7 +18,7 @@ var articles={
                      <p>
                         This is the content of my first article, that is article one. This is the content of my first article, that is article one. This is the content of my first article, that is article one. This is the content of my first article, that is article one. This is the content of my first article, that is article one. This is the content of my first article, that is article one. 
                     </p>`
-    },//used back-quote instead of single quote
+    },
    'article-two':{
        title:' Article-two|Avinash',
         heading:'Article Two',
@@ -37,7 +37,7 @@ var articles={
                     This is the content of the article-three.
                     </p>`
    }
-};
+};//used back-quote instead of single quote in artcle-one 
 function createTemplate(data)//used back-quote instead of single quote
 {
     var title=data.title;
