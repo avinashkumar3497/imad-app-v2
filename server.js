@@ -37,8 +37,8 @@ var articles={
                     This is the content of the article-three.
                     </p>`
    }
-};//used back-quote instead of single quote in artcle-one 
-function createTemplate(data)//used back-quote instead of single quote
+};                //used back-quote instead of single quote in artcle-one 
+function createTemplate(data)      //used back-quote instead of single quote
 {
     var title=data.title;
     var date=data.date;
