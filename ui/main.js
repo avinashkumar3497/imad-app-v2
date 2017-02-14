@@ -3,8 +3,8 @@ console.log('Loaded!');    //print the "Loaded!" in console, which you can see t
 var element=document.getElementById('main-text');
 element.innerHTML='NEW VALUE';
 //move the image
-var img=document.getElementById(madi);
+var img=document.getElementById('madi');
 img.onclick=function()
 {
-    image.style.marginLeft='100px';
+    image.style.marginLeft='200px';
 };
