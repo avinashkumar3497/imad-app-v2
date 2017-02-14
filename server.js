@@ -58,8 +58,9 @@ function createTemplate(data)//used back-quote instead of single quote
         <div>
             <a href="/">Home</a>
         </div>
-        <hr/>
+        <h3>
             ${heading}
+            </h3>
         <div>
             ${date}
         </div>
