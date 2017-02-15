@@ -31,10 +31,10 @@ request.onreadystatechange=function()
         }
     }
 }
-}
 //Make the request
-request.open('GET','http://avinashkumar3497.imad.hasura-app.io/counter',true); /*constructor of object 'request'. It will make the request and will get get us the response from http://avinashkumar3497.imad.hasura-app.io/counter*/
+request.open('GET','http://avinashkumar3497.imad.hasura-app.io/counter',true); /*. It will make the request and will get get us the response from http://avinashkumar3497.imad.hasura-app.io/counter*/
 request.send(null);
+};
 /*for the footer botton
 var ctr=4;
 var button =document.getElementById('counter');
