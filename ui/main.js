@@ -17,7 +17,7 @@ img.onclick=function()
 };
 button.onclick=function()
 {
-    var request= new XMLHttpRequest();   // object 'request' created
+    var request= new XMLHttpRequest();   // object 'request' created, constructor will be called.
 //Capture the response and store it in a variable
 request.onreadystatechange=function()
 {
@@ -25,7 +25,7 @@ request.onreadystatechange=function()
     {
         if(request.status===200)
         {
-            var ctr=request.responseText;
+            var ctr=request.responseText; //the responseText will give the respose(recieved by the request) in text form
             var span=document.getElementById('count');
             span.innerHTML=ctr.toString();
         }
@@ -33,7 +33,7 @@ request.onreadystatechange=function()
 }
 }
 //Make the request
-request.open('GET','http://avinashkumar3497.imad.hasura-app.io/counter',true); //constructor of object 'request'
+request.open('GET','http://avinashkumar3497.imad.hasura-app.io/counter',true); /*constructor of object 'request'. It will make the request and will get get us the response from http://avinashkumar3497.imad.hasura-app.io/counter*/
 request.send(null);
 /*for the footer botton
 var ctr=4;
