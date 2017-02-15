@@ -1,5 +1,5 @@
 
-var ctr=0;
+var ctr=4;
 console.log('Loaded!');    //print the "Loaded!" in console, which you can see through the google chrome inspect element feature(developer tool)
 //change the text of the main-text div
 var element=document.getElementById('main-text');
