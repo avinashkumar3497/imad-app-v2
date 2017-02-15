@@ -1,3 +1,5 @@
+
+var ctr=0;
 console.log('Loaded!');    //print the "Loaded!" in console, which you can see through the google chrome inspect element feature(developer tool)
 //change the text of the main-text div
 var element=document.getElementById('main-text');
@@ -13,4 +15,12 @@ function moveRight()
 img.onclick=function()
 {
     var interval=setInterval(moveRight,100);
+};
+//for the footer botton
+var button =document.getElementById('counter');
+button.onclick=function()
+{
+    ctr++;
+    var span=document.getElementById('count');
+    span.innerHTML=ctr.toString();
 };
