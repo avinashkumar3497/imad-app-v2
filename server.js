@@ -79,9 +79,9 @@ app.get('/', function (req, res) {
 });
 app.get('/counter', function (req, res) {
     ctr++;
-  send(ctr.toString());
+  res.send(ctr.toString());
 });
-app.get('/articleName',function(req,res)     //: is the feature of the morgan
+app.get('/:articleName',function(req,res)     //: is the feature of the morgan
 {  //articleName = article-one
     //article[articleName]={} content object for object one
     articleName=req.params.articleName;
