@@ -71,8 +71,9 @@ function createTemplate(data)      //used back-quote instead of single quote
         </div>
         </hr>
         <div class='footer'>
-           Comment Here --- <input type='text' id='name' placeholder='name'></input>
-                            <input type='submit' id='submit_btn' value='submit'></input>
+           Comment Here --- <input type='text' id='cmt' placeholder='name'></input>
+                            <input type='submit' id='submit_cmt' value='submit'></input>
+        <ui id='cmt_list></ui>                    
         </div>
     </body>
 </html>`
@@ -94,6 +95,14 @@ app.get('/submit-name',function(req,res)    // URL:/submit-name?name=xxxxxx
     names.push(name);
     res.send(JSON.stringify(names));
 });
+                        var comments=[];
+                app.get('/submit-comments',function(req,res)    // URL:/submit-name?name=xxxxxx
+                {
+                    //get the name from the request
+                    var cmt=req.query.cmt;
+                    comments.push(cmt);
+                    res.send(JSON.stringify(comments));
+                });
 app.get('/:articleName',function(req,res)     //: is the feature of the morgan
 {  //articleName = article-one
     //article[articleName]={} content object for object one
