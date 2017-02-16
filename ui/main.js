@@ -1,4 +1,4 @@
-windows.onload=function()
+window.onload=function()
 {
 var button= document.getElementById('counter');
 console.log('Loaded!');    //print the "Loaded!" in console, which you can see through the google chrome inspect element feature(developer tool)
