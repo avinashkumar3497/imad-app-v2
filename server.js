@@ -75,6 +75,8 @@ function createTemplate(data)      //used back-quote instead of single quote
                             <input type='submit' id='submit_cmt' value='submit'></input>
         <ui id='cmt_list'></ui>                    
         </div>
+        <script type="text/javascript" src="/ui/main.js">
+        </script>
     </body>
 </html>`
 ;
