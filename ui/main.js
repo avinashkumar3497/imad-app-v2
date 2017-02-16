@@ -1,3 +1,5 @@
+windows.onload=function()
+{
 var button= document.getElementById('counter');
 console.log('Loaded!');    //print the "Loaded!" in console, which you can see through the google chrome inspect element feature(developer tool)
 //change the text of the main-text div
@@ -68,7 +70,6 @@ submit.onclick=function()
             request.send(null);     
              
 };
-
 var submit1=document.getElementById('submit_cmt');
 submit1.onclick=function()
 {
@@ -110,3 +111,4 @@ button.onclick=function()
     var span=document.getElementById('count');
     span.innerHTML=ctr.toString();
 };*/
+};
