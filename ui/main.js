@@ -37,39 +37,6 @@ request.onreadystatechange=function()
 request.open('GET','http://avinashkumar3497.imad.hasura-app.io/counter',true); /*. It will make the request and will get get us the response from http://avinashkumar3497.imad.hasura-app.io/counter*/
 request.send(null);
 };
-
-var submit=document.getElementById('submit_btn');
-submit.onclick=function()
-{
-    var nameInput=document.getElementById('name');
-    var name=nameInput.value;
-    //make a request to the server and send the name
-    //Capture the list of names and render it as a list
-                var request= new XMLHttpRequest();   // object 'request' created
-            //Capture the response and store it in a variable
-            request.onreadystatechange=function()
-            {
-                if(request.readyState===XMLHttpRequest.DONE)
-                {
-                    if(request.status===200)
-                    {
-                        var names=request.responseText;
-                        names=JSON.parse(names);
-                        var list='';
-                        for(var i=0;i<names.length;i++)
-                        {
-                            list+='<li>' + names[i] + '</li>';
-                        }
-                         var ui=document.getElementById('namelist');
-                        ui.innerHTML=list; 
-                    }
-                }
-            };
-            //Make the request
-             request.open('GET','http://avinashkumar3497.imad.hasura-app.io/submit-name?name=' + name,true); /*. It will make the request and will get get us the response from http://avinashkumar3497.imad.hasura-app.io/counter*/
-            request.send(null);     
-             
-};
 var submit1=document.getElementById('submit_cmt');
 submit1.onclick=function()
 {
@@ -102,6 +69,39 @@ submit1.onclick=function()
             request.send(null);     
              
 };
+var submit=document.getElementById('submit_btn');
+submit.onclick=function()
+{
+    var nameInput=document.getElementById('name');
+    var name=nameInput.value;
+    //make a request to the server and send the name
+    //Capture the list of names and render it as a list
+                var request= new XMLHttpRequest();   // object 'request' created
+            //Capture the response and store it in a variable
+            request.onreadystatechange=function()
+            {
+                if(request.readyState===XMLHttpRequest.DONE)
+                {
+                    if(request.status===200)
+                    {
+                        var names=request.responseText;
+                        names=JSON.parse(names);
+                        var list='';
+                        for(var i=0;i<names.length;i++)
+                        {
+                            list+='<li>' + names[i] + '</li>';
+                        }
+                         var ui=document.getElementById('namelist');
+                        ui.innerHTML=list; 
+                    }
+                }
+            };
+            //Make the request
+             request.open('GET','http://avinashkumar3497.imad.hasura-app.io/submit-name?name=' + name,true); /*. It will make the request and will get get us the response from http://avinashkumar3497.imad.hasura-app.io/counter*/
+            request.send(null);     
+             
+};
+
 /*for the footer botton
 var ctr=4;
 var button =document.getElementById('counter');
