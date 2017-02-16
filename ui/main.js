@@ -38,7 +38,7 @@ request.open('GET','http://avinashkumar3497.imad.hasura-app.io/counter',true); /
 request.send(null);
 };
 var submit1=document.getElementById('submit_cmt');
-submit1.onclick=function()
+submit1.onmouseover=function()
 {
     var cmtInput=document.getElementById('cmt');
     var cmt=cmtInput.value;
