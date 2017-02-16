@@ -4,7 +4,7 @@ var path = require('path');
 var app = express();
 var ctr=0;
 app.use(morgan('combined'));
-var articles={
+var articles={/*has objects inside object*/
     'article-one':{
         title:' Article-one|Avinash',
         heading:'Article One',
@@ -85,13 +85,20 @@ app.get('/:articleName',function(req,res)     //: is the feature of the morgan
 {  //articleName = article-one
     //article[articleName]={} content object for object one
     articleName=req.params.articleName;
-   res.send(createTemplate(articles[articleName]));
-});
+   res.send(createTemplate(articles[articleName]/* array with named index(text instead of numbers)*/));});
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
+});
+var names=[];
+app.get('/submit-name/:name',function()
+{
+    //get the name from the request
+    var name=req.params.name;
+    names.push(name);
+    res.send(JSON.stringify(names));
 });
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
