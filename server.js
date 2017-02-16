@@ -81,6 +81,14 @@ app.get('/counter', function (req, res) {
     ctr++;
   res.send(ctr.toString());
 });
+var names=[];
+app.get('/submit-name',function(req,res)    // URL:/submit-name?name=xxxxxx
+{
+    //get the name from the request
+    var name=req.query.name;
+    names.push(name);
+    res.send(JSON.stringify(names));
+});
 app.get('/:articleName',function(req,res)     //: is the feature of the morgan
 {  //articleName = article-one
     //article[articleName]={} content object for object one
@@ -91,14 +99,6 @@ app.get('/ui/style.css', function (req, res) {
 });
 app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
-});
-var names=[];
-app.get('/submit-name',function(req,res)    // URL:/submit-name?name=xxxxxx
-{
-    //get the name from the request
-    var name=req.query.name;
-    names.push(name);
-    res.send(JSON.stringify(names));
 });
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
