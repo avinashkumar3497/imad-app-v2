@@ -69,7 +69,7 @@ function createTemplate(data)      //used back-quote instead of single quote
             ${content}
         </div>
         </div>
-        </hr>
+        <hr/>
         <div class='footer'>
            Comment Here --- <input type='text' id='cmt' placeholder='name'></input>
                             <input type='submit' id='submit_cmt' value='submit'></input>
