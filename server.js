@@ -73,7 +73,7 @@ function createTemplate(data)      //used back-quote instead of single quote
         <div class='footer'>
            Comment Here --- <input type='text' id='cmt' placeholder='name'></input>
                             <input type='submit' id='submit_cmt' value='submit'></input>
-        <ui id='cmt_list></ui>                    
+        <ui id='cmt_list'></ui>                    
         </div>
     </body>
 </html>`
