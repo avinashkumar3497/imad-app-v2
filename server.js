@@ -93,9 +93,19 @@ return htmlTemplate;
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
+//create the pool somewhere globally so its lifetime
+//lasts for as long as your app is running
+var pool=new Pool(config);
 app.get('/test-db',function(req,res){
     //make a select request
     //return a response with the results
+    pool.query('SELECT*FROM test',function(err,result){
+    if(err){
+        res.status(500).send(err.tostring());
+    }    else{
+        res.send(JSON.stringify(result));
+    }
+});
 });
 app.get('/counter', function (req, res) {
     ctr++;
