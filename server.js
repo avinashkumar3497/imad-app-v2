@@ -127,7 +127,7 @@ app.get('/submit-name',function(req,res)    // URL:/submit-name?name=xxxxxx
                     comments.push(cmt);
                     res.send(JSON.stringify(comments));
                 });
-app.get('/article/:articleName',function(req,res)     //: is the feature of the morgan
+app.get('/articles/:articleName',function(req,res)     //: is the feature of the morgan
 {  //articleName = article-one
     //article[articleName]={} content object for object one
     
