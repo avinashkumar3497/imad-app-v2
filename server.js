@@ -127,11 +127,22 @@ app.get('/submit-name',function(req,res)    // URL:/submit-name?name=xxxxxx
                     comments.push(cmt);
                     res.send(JSON.stringify(comments));
                 });
-app.get('/:articleName',function(req,res)     //: is the feature of the morgan
+app.get('/articles:articleName',function(req,res)     //: is the feature of the morgan
 {  //articleName = article-one
     //article[articleName]={} content object for object one
-    articleName=req.params.articleName;
-   res.send(createTemplate(articles[articleName]/* array with named index(text instead of numbers)*/));});
+    pool.query("SELECT * FROM article WHERE title="+req.params.articleName,function(err,result){
+        if(err){
+            res.status(500).send(err.toString());
+        } else {
+            if (reult.rows.lenght===0){
+                res.status(404).send('Article not found');
+            }else{
+                var articleData = result.rows[0];
+                res.send(createTemplate(articleData));
+            }
+        }
+        });
+    });
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
