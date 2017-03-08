@@ -130,7 +130,9 @@ app.get('/submit-name',function(req,res)    // URL:/submit-name?name=xxxxxx
 app.get('/articles:articleName',function(req,res)     //: is the feature of the morgan
 {  //articleName = article-one
     //article[articleName]={} content object for object one
-    pool.query("SELECT * FROM article WHERE title="+req.params.articleName,function(err,result){
+    
+    //SELECT * FROM article WHERE title='article-one'
+    pool.query("SELECT * FROM article WHERE title='"+req.params.articleName+"'",function(err,result){
         if(err){
             res.status(500).send(err.toString());
         } else {
