@@ -71,7 +71,7 @@ function createTemplate(data)      //used back-quote instead of single quote
             ${heading}
             </h3>
         <div>
-            ${date}
+            ${date.toDateString()}
         </div>
         <div>
             ${content}
