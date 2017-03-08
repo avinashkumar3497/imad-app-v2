@@ -11,42 +11,7 @@ var config = {
 };
 var app = express();
 var ctr=0;
-app.use(morgan('combined'));
-var articles={/*has objects inside object*/
-    'article-one':{
-        title:' Article-one|Avinash',
-        heading:'Article One',
-        date:'feb 13,2017',
-        content:    `
-                    <p>
-                        This is the content of my first article, that is article one. This is the content of my first article, that is article one. This is the content of my first article, that is article one. This is the content of my first article, that is article one. This is the content of my first article, that is article one. This is the content of my first article, that is article one. 
-                        </p>
-                     <p>
-                        This is the content of my first article, that is article one. This is the content of my first article, that is article one. This is the content of my first article, that is article one. This is the content of my first article, that is article one. This is the content of my first article, that is article one. This is the content of my first article, that is article one. 
-                    </p>
-                     <p>
-                        This is the content of my first article, that is article one. This is the content of my first article, that is article one. This is the content of my first article, that is article one. This is the content of my first article, that is article one. This is the content of my first article, that is article one. This is the content of my first article, that is article one. 
-                    </p>`
-    },
-   'article-two':{
-       title:' Article-two|Avinash',
-        heading:'Article Two',
-        date:'feb 14,2017',
-        content:    `//used back-quote instead of single quote
-                    <p>
-                    This is the content of the article-two.
-                    </p>`
-   },
-   'article-three':{
-        title:' Article-three|Avinash',
-        heading:'Article three',
-        date:'feb 15,2017',
-        content:    `//used back-quote instead of single quote
-                    <p>
-                    This is the content of the article-three.
-                    </p>`
-   }
-};                //used back-quote instead of single quote in artcle-one 
+app.use(morgan('combined'));             //used back-quote instead of single quote in artcle-one 
 function createTemplate(data)      //used back-quote instead of single quote
 {
     var title=data.title;
@@ -132,7 +97,7 @@ app.get('/articles/:articleName',function(req,res)     //: is the feature of the
     //article[articleName]={} content object for object one
     
     //SELECT * FROM article WHERE title='article-one'
-    pool.query("SELECT * FROM article WHERE title='"+req.params.articleName+"'",function(err,result){
+    pool.query("SELECT * FROM article WHERE title=$1",[req.params.articleName],function(err,result){
         if(err){
             res.status(500).send(err.toString());
         } else {
